@@ -1,6 +1,30 @@
-# LibPathMapping
+# Angular Library with path mapping
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+
+## Highlights
+1. in `projects/lib-path-mapping/src/lib/comp1/comp1.component.ts`
+
+```javascript
+import {Comp2Component} from 'lib-path-mapping/comp2';
+```
+
+2. in `projects/lib-path-mapping/tsconfig.lib.json`
+
+```json
+    "baseUrl": ".",
+    "paths": {
+      "lib-path-mapping/*": ["src/lib/*"]
+    },
+```
+## Reproduce the issue
+- run `ng build`
+
+```
+ERROR: Entry point lib-path-mapping/comp2 which is required by lib-path-mapping doesn't exists.
+An unhandled exception occurred: Entry point lib-path-mapping/comp2 which is required by lib-path-mapping doesn't exists.
+```
 
 ## Development server
 
